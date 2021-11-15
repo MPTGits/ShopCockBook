@@ -1,0 +1,2 @@
+# ShopCockBook
+Angular playground projects
