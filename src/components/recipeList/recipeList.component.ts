@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Recipe } from '../recipes/recipe.model';
 
 @Component({
   selector: 'recipe-list',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipeList.component.css']
 })
 export class RecipeListComponent {
+  recipes: Recipe[] = [
+    new Recipe('Brownies', 'Some fluffy brownies', 'https://www.inspiredtaste.net/wp-content/uploads/2016/06/Brownies-Recipe-2-1200.jpg'),
+    new Recipe('Cream Caremel', 'Some cream caramel', 'https://recepti.gotvach.bg/files/lib/400x296/krem-karamel-spoluchliv1.jpg')
+  ];
   text = "This is a recipe list"
 }
