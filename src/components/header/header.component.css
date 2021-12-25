@@ -1,3 +1,12 @@
 h2 {
     text-align: center;
 }
+
+.navbar {
+    height: 67px;
+    background-color: lightgoldenrodyellow;
+}
+
+.nav-link{
+    padding:2.3rem 5rem;
+}
