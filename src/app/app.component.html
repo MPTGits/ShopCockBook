@@ -1,10 +1,10 @@
-<header></header>
+<header (tabClick)="onHeaderClick($event)"></header>
 <div class="row mainPage col-xs-12">
     <div class="col-xs">
-        <shoping-cart></shoping-cart>
+        <shoping-cart [isTabActive]="activeTab==='shopingCart'"></shoping-cart>
     </div>
     <div class="col-xs-7">
-        <recipe-list></recipe-list>
+        <recipe-list [isTabActive]="activeTab==='recipe'"></recipe-list>
     </div>
     
 </div>

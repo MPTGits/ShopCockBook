@@ -1,6 +1,6 @@
-<div class="shopingCart">
-    <div class="col-md-5">
-        <shoping-cart-edit></shoping-cart-edit>
+<div class="shopingCart" *ngIf="isTabActive">
+    <div class="col-md-3">
+        <shoping-cart-edit (ingredientAdded)="onIngredientAdded($event)"></shoping-cart-edit>
         <ul class="list-group">
             <a class="list-group-item" 
             style="cursor: pointer;"

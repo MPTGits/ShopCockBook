@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ShopCockBook';
+  activeTab='recipe';
+
+  onHeaderClick(clickedTab){
+    this.activeTab = clickedTab;
+  }
 }

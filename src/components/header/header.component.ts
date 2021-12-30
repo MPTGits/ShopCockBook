@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 
 
@@ -9,4 +9,10 @@ import { Component } from "@angular/core";
 })
 export class HeaderComponent{
     text = "This is a header";
+    @Output() tabClick = new EventEmitter<any>();
+
+
+    onHeaderClick(clickedTab: string){
+        this.tabClick.emit(clickedTab);
+    }
 }
