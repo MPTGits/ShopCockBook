@@ -7,6 +7,7 @@ import { RecipeItemComponent } from 'src/components/recipeList/recipeItem/recipe
 import { RecipeListComponent } from 'src/components/recipeList/recipeList.component';
 import { ShopingCartComponent } from 'src/components/shopingCart/shopingCart.component';
 import { ShopingCartEditComponent } from 'src/components/shopingCart/shopingCartEdit/shopingCartEdit.component';
+import { DropdownDirective } from 'src/shared/dropdown.directive';
 
 import { AppComponent } from './app.component';
 
@@ -18,7 +19,8 @@ import { AppComponent } from './app.component';
     ShopingCartEditComponent,
     RecipeListComponent,
     RecipeItemComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
