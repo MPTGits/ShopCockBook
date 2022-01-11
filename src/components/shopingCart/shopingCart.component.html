@@ -1,10 +1,10 @@
 <div class="shopingCart" *ngIf="isTabActive">
     <div class="col-md-3">
-        <shoping-cart-edit (ingredientAdded)="onIngredientAdded($event)"></shoping-cart-edit>
+        <shoping-cart-edit></shoping-cart-edit>
         <ul class="list-group">
             <a class="list-group-item" 
             style="cursor: pointer;"
-            *ngFor="let ingredient of ingredients">
+            *ngFor="let ingredient of activeIngredients">
             {{ingredient.name}} ({{ingredient.amount}})
             </a>
         </ul>

@@ -1,5 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Ingredient } from "src/models/ingredient/ingredient.model";
+import { ShopingCartService } from "src/services/shopingCart.service";
 
 
 
@@ -8,15 +9,15 @@ import { Ingredient } from "src/models/ingredient/ingredient.model";
     templateUrl: './shopingCart.component.html',
     styleUrls: ['./shopingCart.component.css']
 })
-export class ShopingCartComponent{
+export class ShopingCartComponent implements OnInit{
     @Input() isTabActive = false;
-    ingredients: Ingredient[] = [
-        new Ingredient("carrot", 5),
-        new Ingredient("cream", 10)
-    ];
+    activeIngredients: Ingredient[];
     text = "This is a shoping cart";
 
-    onIngredientAdded(ingredient: Ingredient){
-        this.ingredients.push(ingredient);
+    constructor(private shopingCartService: ShopingCartService){}
+
+    ngOnInit() {
+        this.activeIngredients = this.shopingCartService.getIngredients();
+        this.shopingCartService.ingredientsChanged.subscribe((ingredient: Ingredient[]) => this.activeIngredients = ingredient)
     }
 }

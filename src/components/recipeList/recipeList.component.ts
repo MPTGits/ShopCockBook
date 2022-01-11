@@ -1,19 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { RecipeService } from 'src/services/recipe.service';
 import { Recipe } from '../../models/recipes/recipe.model';
 
 @Component({
   selector: 'recipe-list',
   templateUrl: './recipeList.component.html',
-  styleUrls: ['./recipeList.component.css']
+  styleUrls: ['./recipeList.component.css'],
+  providers: [RecipeService]
 })
-export class RecipeListComponent {
+export class RecipeListComponent implements OnInit{
   @Input() isTabActive = false;
   currentClickedRecipe: Recipe;
-  recipes: Recipe[] = [
-    new Recipe('Brownies', 'Some fluffy brownies', 'https://www.inspiredtaste.net/wp-content/uploads/2016/06/Brownies-Recipe-2-1200.jpg'),
-    new Recipe('Cream Caremel', 'Some cream caramel', 'https://recepti.gotvach.bg/files/lib/400x296/krem-karamel-spoluchliv1.jpg')
-  ];
-  onRecipeDetailsClick(recipe: Recipe){
-    this.currentClickedRecipe = recipe;
+  recipes: Recipe[];
+
+  constructor(private recipeService: RecipeService){}
+
+  ngOnInit(){
+    this.recipes = this.recipeService.getRecipes();
+    this.recipeService.selectedRecipe.subscribe((recipe: Recipe) => this.currentClickedRecipe = recipe)
   }
+
+
 }

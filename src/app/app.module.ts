@@ -7,6 +7,7 @@ import { RecipeItemComponent } from 'src/components/recipeList/recipeItem/recipe
 import { RecipeListComponent } from 'src/components/recipeList/recipeList.component';
 import { ShopingCartComponent } from 'src/components/shopingCart/shopingCart.component';
 import { ShopingCartEditComponent } from 'src/components/shopingCart/shopingCartEdit/shopingCartEdit.component';
+import { ShopingCartService } from 'src/services/shopingCart.service';
 import { DropdownDirective } from 'src/shared/dropdown.directive';
 
 import { AppComponent } from './app.component';
@@ -26,7 +27,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ShopingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

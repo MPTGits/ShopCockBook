@@ -9,8 +9,7 @@
                 <div class="col-md-6">
                     <recipe-item 
                     *ngFor="let recipeEl of recipes"
-                    [recipe]="recipeEl"
-                    (recipeDetails)="onRecipeDetailsClick(recipeEl)">
+                    [recipe]="recipeEl">
                     </recipe-item>
                 </div>  
                 <div class="col-md-5 col-md-offset-1">
