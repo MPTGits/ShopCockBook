@@ -1,7 +1,7 @@
-<div class="container" *ngIf="isTabActive">
+<div class="container">
     <div class="row">
         <div class="col-xs-14">
-            <button class="btn btn-success">New Recipe</button>
+            <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
         </div>
         <hr>
         <div class="container">
@@ -13,13 +13,7 @@
                     </recipe-item>
                 </div>  
                 <div class="col-md-5 col-md-offset-1">
-                    <recipe-detail 
-                    *ngIf="currentClickedRecipe; else infoText"
-                    [activeRecipe]="currentClickedRecipe">
-                    </recipe-detail>
-                    <ng-template #infoText>
-                        <p>Please select a recipe!</p>
-                    </ng-template>
+                    <router-outlet></router-outlet>
                 </div>
             </div>
         </div>
