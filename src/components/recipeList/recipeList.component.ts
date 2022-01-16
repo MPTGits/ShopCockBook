@@ -11,7 +11,6 @@ import { Recipe } from '../../models/recipes/recipe.model';
 })
 export class RecipeListComponent implements OnInit{
   @Input() isTabActive = false;
-  currentClickedRecipe: Recipe;
   recipes: Recipe[];
 
   constructor(private recipeService: RecipeService,
@@ -20,7 +19,6 @@ export class RecipeListComponent implements OnInit{
 
   ngOnInit(){
     this.recipes = this.recipeService.getRecipes();
-    this.recipeService.selectedRecipe.subscribe((recipe: Recipe) => this.currentClickedRecipe = recipe)
   }
 
   onNewRecipe(){
