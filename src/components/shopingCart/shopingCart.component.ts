@@ -26,4 +26,8 @@ export class ShopingCartComponent implements OnInit, OnDestroy{
     ngOnDestroy(): void {
         this.igChangeSub.unsubscribe();
     }
+
+    onEditItem(index: number){
+        this.shopingCartService.startedEditing.next(index);
+    }
 }
