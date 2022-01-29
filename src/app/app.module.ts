@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from 'src/components/header/header.component';
 import { EmptyRecipeComponent } from 'src/components/recipeList/emptyRecipe/emptyRecipe.component';
@@ -31,7 +31,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [ShopingCartService],
   bootstrap: [AppComponent]
