@@ -9,6 +9,7 @@ import { RecipeItemComponent } from 'src/components/recipeList/recipeItem/recipe
 import { RecipeListComponent } from 'src/components/recipeList/recipeList.component';
 import { ShopingCartComponent } from 'src/components/shopingCart/shopingCart.component';
 import { ShopingCartEditComponent } from 'src/components/shopingCart/shopingCartEdit/shopingCartEdit.component';
+import { RecipeService } from 'src/services/recipe.service';
 import { ShopingCartService } from 'src/services/shopingCart.service';
 import { DropdownDirective } from 'src/shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +35,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ShopingCartService],
+  providers: [ShopingCartService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

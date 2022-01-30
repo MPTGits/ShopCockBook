@@ -31,4 +31,10 @@ export class RecipeDetailComponent {
   onAddToShopingCart(){
     this.recipeService.addIngredientsToShopingCart(this.activeRecipe.ingredients);
   }
+
+  onRecipeDelete(){
+    this.recipeService.deleteRecipe(this.activeRecipe.id-1);
+    this.router.navigate(['/recipes']);
+  }
+  
 }
