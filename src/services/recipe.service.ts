@@ -10,20 +10,22 @@ export class RecipeService{
     recipesChanged = new Subject<Recipe[]>();
 
 
-    private recipes: Recipe[] = [
-        new Recipe(1,
-                   'Brownies', 
-                   'Some fluffy brownies', 
-                   'https://www.inspiredtaste.net/wp-content/uploads/2016/06/Brownies-Recipe-2-1200.jpg',
-                   [new Ingredient('Eggs', 4),
-                    new Ingredient('Sugar', 250)]),
-        new Recipe(2,
-                   'Cream Caremel', 
-                   'Some cream caramel', 
-                   'https://recepti.gotvach.bg/files/lib/400x296/krem-karamel-spoluchliv1.jpg',
-                    [new Ingredient('Eggs', 2),
-                     new Ingredient('Flower', 150)])
-      ];
+    // private recipes: Recipe[] = [
+    //     new Recipe(1,
+    //                'Brownies', 
+    //                'Some fluffy brownies', 
+    //                'https://www.inspiredtaste.net/wp-content/uploads/2016/06/Brownies-Recipe-2-1200.jpg',
+    //                [new Ingredient('Eggs', 4),
+    //                 new Ingredient('Sugar', 250)]),
+    //     new Recipe(2,
+    //                'Cream Caremel', 
+    //                'Some cream caramel', 
+    //                'https://recepti.gotvach.bg/files/lib/400x296/krem-karamel-spoluchliv1.jpg',
+    //                 [new Ingredient('Eggs', 2),
+    //                  new Ingredient('Flower', 150)])
+    //   ];
+
+    private recipes: Recipe[] = [];
 
     constructor(private shopingCartService: ShopingCartService){};
 
@@ -53,5 +55,10 @@ export class RecipeService{
         this.recipes.splice(index);
         this.recipesChanged.next(this.recipes.slice());
       }
+
+    setRecipes(recipes: Recipe[]){
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
+    }
       
 }

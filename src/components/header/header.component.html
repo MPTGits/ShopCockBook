@@ -23,6 +23,18 @@
                 </a>
             </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <div ngbDropdown class="dropdown">
+                <button ngbDropdownToggle class="btn btn-secondary" type="button" id="dropdownMenuButton1" aria-expanded="false">
+              Manage <span class="caret"></span>
+              </button>
+                <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+                  <li><a ngbDropdownItem style="cursor: pointer;" (click)="onSaveData()">Save Data</a></li>
+                  <li><a ngbDropdownItem style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a></li>
+                </ul>
+            </div>
+        </ul>
     </div>
 </nav>
+
 

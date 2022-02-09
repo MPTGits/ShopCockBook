@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http'
 import { HeaderComponent } from 'src/components/header/header.component';
 import { EmptyRecipeComponent } from 'src/components/recipeList/emptyRecipe/emptyRecipe.component';
 import { RecipeEditComponent } from 'src/components/recipeList/recipeEdit/recipeEdit.component';
@@ -33,7 +35,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    HttpClientModule
   ],
   providers: [ShopingCartService, RecipeService],
   bootstrap: [AppComponent]
